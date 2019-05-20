@@ -1,0 +1,9 @@
+<a
+  class="my-list-group-item list-group-item" (click)="onSelectItem()"
+>
+  <div>
+    <p>ID: {{food.id}}, {{food.name}}, giá: {{food.price}} </p>
+    <p class="text-description">Ngày cập nhật: {{food.updateDate | date}}, trạng thái: {{food.isSelled.toString() | i18nSelect: isSelledMap}} </p>
+  </div>
+</a>
+

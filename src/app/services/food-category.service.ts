@@ -12,14 +12,14 @@ export class FoodCategoryService {
   private length: number;
   private lengthSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
-  selectedFoodCategory: EventEmitter<SelectedFoodCategory> = new EventEmitter<SelectedFoodCategory>();
+  selectedFoodCategoryEmitter: EventEmitter<SelectedFoodCategory> = new EventEmitter<SelectedFoodCategory>();
   foodCategories$: Observable<FoodCategory[]>;
   length$: Observable<number> = this.lengthSubject.asObservable();
 
   constructor(
     private dataStorageService: DataStorageService
   ) {
-    this.foodCategories = this.dataStorageService.getData(FoodCategoryService.FoodCategoryStorageKey);
+    this.foodCategories = this.dataStorageService.getData<FoodCategory>(FoodCategoryService.FoodCategoryStorageKey);
     this.foodCategories$ = this.foodCategories.valueChanges();
     this.foodCategories$.subscribe( data => {
       this.length = data.length;

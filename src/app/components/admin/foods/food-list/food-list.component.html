@@ -1,0 +1,16 @@
+
+
+
+<div class="container my-container">
+    <div class="row">
+      <div class="col-12">
+          <div class="my-list-group list-group">
+              <app-food-item
+                *ngFor="let item of foods; let i=index"
+                [index]="i" [food]="item"
+              ></app-food-item>
+          </div>
+      </div>
+    </div>
+
+  </div>

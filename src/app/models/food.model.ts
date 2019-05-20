@@ -28,4 +28,9 @@ export class Food {
   }
 }
 
+export class SelectedFood {
+  constructor(public selectedFoodCategory: Food,
+              public index: number ) {}
+}
+
 

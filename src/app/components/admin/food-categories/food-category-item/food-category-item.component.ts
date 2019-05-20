@@ -20,8 +20,8 @@ export class FoodCategoryItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectItem() {
-    this.foodCategoryService.selectedFoodCategory.emit(new SelectedFoodCategory(this.foodCategory, this.index));
+  onSelectItem() {
+    this.foodCategoryService.selectedFoodCategoryEmitter.emit(new SelectedFoodCategory(this.foodCategory, this.index));
   }
 
 }

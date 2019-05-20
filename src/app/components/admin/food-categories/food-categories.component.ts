@@ -17,42 +17,19 @@ import { Employee } from 'src/app/models/employee.model';
 export class FoodCategoriesComponent implements OnInit {
   selectedFoodCategoryParent: SelectedFoodCategory;
   foodCategories: FoodCategory[];
-  foods: Food[];
-  accounts: Account[];
-  items: AngularFireList<FoodCategory>;
-  item2s: Observable<any[]>;
-  item3s: Observable<any[]>;
-  item4s: Observable<any[]>;
 
   constructor(
-    private foodcategoryService: FoodCategoryService,
-    private dataStorageService: DataStorageService,
-    private db2: AngularFireDatabase
-  ) {
-    this.items = this.dataStorageService.getData<FoodCategory>('foodCategories');
-    this.items.valueChanges().subscribe(
-      data => {
-        this.foodCategories = [...data];
-        console.log(data, 1);
-      }
-    );
-
-
-
-
-   }
+    private foodcategoryService: FoodCategoryService
+    ) {
+  }
 
   ngOnInit() {
-
+    this.foodcategoryService.foodCategories$.subscribe( data => {
+      this.foodCategories = [...data];
+    })
   }
 
-  add() {
-   // this.item2s.push(this.foodCategories[0]).then(data => console.log(data));
-    this.items.update('9', this.foodCategories[1]);
-    // this.foodcategoryService.fetchDataFromFireBase();
 
-
-  }
 
 }
 

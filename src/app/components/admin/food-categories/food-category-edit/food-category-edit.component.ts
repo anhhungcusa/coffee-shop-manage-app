@@ -22,7 +22,7 @@ export class FoodCategoryEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.foodCategoryService.selectedFoodCategory
+    this.foodCategoryService.selectedFoodCategoryEmitter
     .subscribe( (value: SelectedFoodCategory) => {
       this.selectedFoodCategory = value;
       this.initForm(true);

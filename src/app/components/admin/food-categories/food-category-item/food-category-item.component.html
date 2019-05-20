@@ -1,4 +1,4 @@
-<li class="my-list-group-item list-group-item" (click)="selectItem()">
+<li class="my-list-group-item list-group-item" (click)="onSelectItem()">
   {{foodCategory.id}}: {{foodCategory.name}},
   trạng thái : {{foodCategory.status.toString() | i18nSelect: statusFoodCategoryMap}}
 </li >

@@ -14,6 +14,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { AdminModule } from './components/admin/admin.module';
+import { FoodService } from './services/food.service';
 
 
 
@@ -36,7 +37,9 @@ import { AdminModule } from './components/admin/admin.module';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    FoodService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

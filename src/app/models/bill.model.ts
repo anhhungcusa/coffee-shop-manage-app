@@ -1,24 +1,39 @@
 import { Food } from './food.model';
 
 export class Bill {
+  private static readonly idPrefix = 'O';
+  private static readonly numberAmount = 4;
   public priceTotal = 0;
+  public id: string;
   constructor(
-    public id: string ,
+    length: number,
     public idCustomer: string,
     public idEmployee: string,
     public isPaid: boolean,
     public createDate: Date,
     public deliverAddress: string,
+    public receiverName: string,
+    public reciverPhoneNumber: string,
     public orderedFoodList: BillInfo[]
   ) {
+    this.id = this.generateId(length);
     this.priceTotal = orderedFoodList.reduce(
       (acc: number, curr: BillInfo) => acc + curr.calculatePrice(), 0
     );
   }
 
-  // caculatePriTotal(): number {
-
-  // }
+  generateId(length) {
+    length++;
+    const suffixNumber = length.toString();
+    let zeroAmount = Bill.numberAmount - suffixNumber.length;
+    let suffix = '';
+    while (zeroAmount > 0) {
+      suffix += '0';
+      --zeroAmount;
+    }
+    suffix += suffixNumber;
+    return Bill.idPrefix + suffix;
+  }
 }
 
 

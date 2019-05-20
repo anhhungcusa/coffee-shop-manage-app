@@ -1,0 +1,14 @@
+.form-item{
+  margin-bottom: 5px
+}
+.my-btn-group{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  .my-btn-item{
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 100px;
+  }
+}
+

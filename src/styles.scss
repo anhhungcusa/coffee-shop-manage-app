@@ -17,6 +17,43 @@ body, * {
   font-family: 'Roboto', sans-serif;
 }
 
+.btn-crud{
+  max-height: 50px;
+  max-width: 50px;
+}
+.text-header {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.text-main {
+  text-align: center;
+  font-size: 0.9rem;
+}
+@media only screen and (max-width: 850px) {
+  .text-header {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+}
+
+
+/* form*/
+
+.my-btn-group{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  .my-btn-item{
+    margin-left: 10px;
+    margin-right: 10px;
+    min-width: 100px;
+  }
+}
+
+/*end form*/
+
+
 
 
 

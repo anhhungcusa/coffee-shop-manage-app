@@ -15,8 +15,9 @@ import { FoodCategoryService } from 'src/app/services/food-category.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FoodListComponent } from './foods/food-list/food-list.component';
 import { FoodEditComponent } from './foods/food-edit/food-edit.component';
-import { FoodDetailComponent } from './foods/food-detail/food-detail.component';
 import { FoodItemComponent } from './foods/food-list/food-item/food-item.component';
+import { DisableInputDirective } from 'src/app/directives/disable-input.directive';
+import { FoodService } from 'src/app/services/food.service';
 
 @NgModule({
   declarations: [
@@ -32,8 +33,8 @@ import { FoodItemComponent } from './foods/food-list/food-item/food-item.compone
     NavbarComponent,
     FoodListComponent,
     FoodEditComponent,
-    FoodDetailComponent,
     FoodItemComponent,
+    DisableInputDirective
   ],
   imports: [
     CommonModule,
@@ -45,7 +46,8 @@ import { FoodItemComponent } from './foods/food-list/food-item/food-item.compone
     AdminComponent
   ],
   providers: [
-    FoodCategoryService
+    FoodCategoryService,
+    FoodService
   ]
 })
 export class AdminModule { }

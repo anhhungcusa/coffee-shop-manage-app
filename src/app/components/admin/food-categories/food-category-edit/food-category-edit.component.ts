@@ -12,7 +12,7 @@ export class FoodCategoryEditComponent implements OnInit {
   @ViewChild('selectedItem') selectedItemRef: ElementRef;
   selectedFoodCategory: SelectedFoodCategory;
 
-  statusOption = {true: true, false: false};
+  statusOption = {true: 'true', false: 'false'};
   foodCategoryForm: FormGroup;
 
   constructor(
@@ -34,29 +34,24 @@ export class FoodCategoryEditComponent implements OnInit {
     const status = (formValue.status === 'true') ? true : false;
     this.selectedFoodCategory.selectedFoodCategory.name = formValue.name.toLocaleUpperCase();
     this.selectedFoodCategory.selectedFoodCategory.status = status;
-    this.foodCategoryService.updateFoodCategory(this.selectedFoodCategory.selectedFoodCategory, this.selectedFoodCategory.index)
-      .then( data => console.log('success: ', data))
-      .catch(err => console.log('err: ', err));
-    //console.log(this.selectedFoodCategory.selectedFoodCategory);
+    this.foodCategoryService.updateFoodCategory(this.selectedFoodCategory.selectedFoodCategory, this.selectedFoodCategory.index);
   }
 
   onSubmit() {
-     this.foodCategoryService.addFoodCategory(this.foodCategoryForm.value)
-     .then( data => console.log('add success: ', data))
-     .catch(err => console.log('add err: ', err));;
+     this.foodCategoryService.addFoodCategory(this.foodCategoryForm.value);
   }
 
   initForm(isEdit: boolean = false) {
     let foodCategoryName = '';
-    let foodCategoryStatus = 'true';
+    let foodCategoryStatus = this.statusOption.true;
 
     if(isEdit) {
       foodCategoryName = this.selectedFoodCategory.selectedFoodCategory.name;
       foodCategoryStatus = `${this.selectedFoodCategory.selectedFoodCategory.status}`;
     }
 
-    let nameFormControl = new FormControl(foodCategoryName);
-    let statusFormControl = new FormControl(foodCategoryStatus);
+    const nameFormControl = new FormControl(foodCategoryName);
+    const statusFormControl = new FormControl(foodCategoryStatus);
     this.foodCategoryForm = new FormGroup({
       'name': nameFormControl,
       'status': statusFormControl

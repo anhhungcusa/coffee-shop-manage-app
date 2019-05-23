@@ -1,1 +1,12 @@
-<app-food-list [foods]="foods"></app-food-list>
+
+<div class="container-fluid my-container-fluid">
+  <div class="row">
+    <div class="col-12 col-md-5 col-lg-6 food-list">
+        <app-food-list [foods]="foods"></app-food-list>
+    </div>
+    <div class="col-12 col-md-7 col-lg-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

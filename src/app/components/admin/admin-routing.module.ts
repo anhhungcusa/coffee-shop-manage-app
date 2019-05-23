@@ -7,18 +7,24 @@ import { FoodsComponent } from './foods/foods.component';
 import { FoodCategoriesComponent } from './food-categories/food-categories.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { OrderComponent } from './order/order.component';
+import { FoodEditComponent } from './foods/food-edit/food-edit.component';
+import { FoodItemComponent } from './foods/food-list/food-item/food-item.component';
 
 const adminRoutes: Routes = [
   {
     path: 'admin', component: AdminComponent,
     children: [
+      {path : '', redirectTo: 'order', pathMatch: 'full'},
       {path: 'order', component: OrderComponent},
-      {path: 'foods', component: FoodsComponent},
+      {path: 'foods', component: FoodsComponent, children: [
+        {path: 'new', component: FoodEditComponent},
+        {path: ':id', component: FoodEditComponent},
+        {path: ':id/edit', component: FoodEditComponent},
+      ]},
       {path: 'customers', component: CustomersComponent},
       {path: 'food-categories', component: FoodCategoriesComponent},
       {path: 'employees', component: EmployeesComponent},
-      {path: 'accounts', component: AccountsComponent},
-      {path : '', redirectTo: 'order', pathMatch: 'full'}
+      {path: 'accounts', component: AccountsComponent}
     ]
   }
 ];

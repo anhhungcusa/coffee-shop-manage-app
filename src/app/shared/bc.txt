@@ -1,0 +1,5 @@
+respondtime: network
+tai sao ko nen luu tru user tren local
+firebase JWT ko luu localSorage/ luu trong indexDB
+
+chong spam request/DDoS

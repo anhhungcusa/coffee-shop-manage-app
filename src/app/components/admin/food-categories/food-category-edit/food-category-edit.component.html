@@ -1,9 +1,9 @@
 <form [formGroup]="foodCategoryForm" (ngSubmit) ="onSubmit()">
   <div class="form-row">
-    <div class="col-12 col-sm-7  form-item">
+    <div class="col-12 col-sm-8  form-item">
       <input formControlName="name" type="text" class="form-control" placeholder="Tên loại món ">
     </div>
-    <div class="col-12 col-sm-3  form-item">
+    <div class="col-12 col-sm-4  form-item">
         <select formControlName="status" class="custom-select mr-sm-2" #selectedItem>
           <option [value]="statusOption.true" selected>Mở</option>
           <option [value]="statusOption.false" >Đóng</option>

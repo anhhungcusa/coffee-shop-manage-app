@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FoodService } from 'src/app/services/food.service';
 import { SelectedFood, Food } from 'src/app/models/food.model';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-food-item',
@@ -17,14 +18,17 @@ export class FoodItemComponent implements OnInit {
   selectedFood: SelectedFood;
 
   constructor(
-    private foodService: FoodService
+    private foodService: FoodService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
   }
-
-  onSelectItem() {
-    this.foodService.selectedFoodEmitter.emit( new SelectedFood(this.food, this.index));
+  editFood() {
+    this.router.navigate([`${this.index}${this.food.id}${this.food.name}1/edit`], {relativeTo: this.route});
   }
+
+
 
 }

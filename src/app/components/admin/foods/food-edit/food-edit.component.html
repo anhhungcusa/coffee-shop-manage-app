@@ -1,3 +1,66 @@
-<p>
-  food-edit works!
-</p>
+<form id="foodForm" [formGroup]="foodForm" (ngSubmit) ="onSubmit()">
+  <div class="row">
+      <div class="form-row col-12">
+        <input
+        [ngClass]="setCurrentClasses"
+        formControlName="name" class="text-header form-control "
+        type="text" name="" id="">
+      </div>
+      <div class="form-main col-12">
+        <div class="form-group">
+            <label for="updateDate">Ngày cập nhật</label>
+            <input
+            [ngClass]="setCurrentClasses"
+            formControlName="updateDate" class="form-control"
+            type="datetime-local"  id="updateDate" >
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="idFoodCategory">Loại món ăn</label>
+            <select
+            [ngClass]="setCurrentClasses"
+            formControlName="idFoodCategory"  class="custom-select" id="idFoodCategory" >
+              <option *ngFor="let item of foodCategories" [value]="item.id">{{item.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+              <label for="price">Giá</label>
+              <input
+              [ngClass]="setCurrentClasses"
+              formControlName="price" class="form-control"  type="number"  id="price">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="isSelled">Trạng thái</label>
+            <select
+            [ngClass]="setCurrentClasses"
+            formControlName="isSelled" class="custom-select" id="isSelled">
+              <option [value]="statusOption.true" selected>Đang bán</option>
+              <option [value]="statusOption.false" >Ngừng</option>
+            </select>
+          </div>
+            <div class="form-group col-md-8">
+                <label for="imgUrl">Link ảnh</label>
+                <input
+                [ngClass]="setCurrentClasses"
+                formControlName="imgUrl" class="form-control"  type="text"  id="imgUrl">
+            </div>
+        </div>
+        <div class="food-img  d-flex justify-content-center ">
+          <img class="img-fluid" [src]="foodForm.get('imgUrl').value" alt="">
+        </div>
+      </div>
+      <div class="col-12">
+          <div [ngSwitch]='btnStatus' class="my-btn-group" >
+            <button *ngSwitchCase="'add'"  type="submit" class="btn my-btn-item btn-success">Thêm</button>
+            <button *ngSwitchCase="'save'" type="submit" class="btn my-btn-item btn-success">Lưu</button>
+            <button *ngSwitchCase="'edit'" type="button" class="btn my-btn-item btn-info" (click)="editFood()">Sửa</button>
+            <button type="button"  class="btn my-btn-item btn-dark" (click)="onCancel()">Quay lại</button>
+          </div>
+        </div>
+
+  </div>
+
+</form>
+

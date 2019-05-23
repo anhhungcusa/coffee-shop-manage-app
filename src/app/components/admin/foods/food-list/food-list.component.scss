@@ -1,11 +1,16 @@
 
 .my-container{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 
 .my-list-group{
   cursor: pointer;
   margin-top: 20px;
 
+}
+
+.btn-new{
+  cursor: pointer;
+  color: #82C91E;
 }

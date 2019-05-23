@@ -32,11 +32,15 @@ export class FoodCategoryService {
 
   addFoodCategory(value: any) {
     const newFoodCategory = new FoodCategory(this.length, value.name.toLocaleUpperCase(), value.status);
-    return this.dataStorageService.addObject(this.foodCategories, `${this.length}`, newFoodCategory);
+    return this.dataStorageService.addObject(this.foodCategories, `${this.length}`, newFoodCategory)
+      .then(data => console.log('success: ', data))
+      .catch(err => console.log('err :', err));
   }
 
   updateFoodCategory(value: FoodCategory, index: number) {
-    return this.dataStorageService.updateObject(this.foodCategories, `${index}`, value);
+    return this.dataStorageService.updateObject(this.foodCategories, `${index}`, value)
+      .then(data => console.log('success: ', data))
+      .catch(err => console.log('err :', err));
   }
 
 }

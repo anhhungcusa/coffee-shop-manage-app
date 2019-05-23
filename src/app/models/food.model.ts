@@ -1,10 +1,11 @@
 export class Food {
-  private static readonly idPrefix = 'F';
-  private static readonly numberAmount = 3;
+  static readonly idPrefix = 'F';
+  static readonly numberAmount = 3;
+  static readonly idLength = 4;
   public id: string;
   constructor(
     length: number,
-    public idCategory: string,
+    public idFoodCategory: string,
     public name: string,
     public imgUrl: string,
     public price: number,

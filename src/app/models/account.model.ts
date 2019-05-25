@@ -8,7 +8,7 @@ export class Account {
     public userName: string,
     public password: string,
     public role: number,
-    public registerDate: Date,
+    public registerDate: string,
     public status: boolean = true
   ) {
     this.id = this.generateId(length);

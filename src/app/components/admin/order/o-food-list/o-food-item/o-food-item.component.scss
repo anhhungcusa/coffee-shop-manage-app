@@ -1,0 +1,47 @@
+.card-item{
+  border: 1px solid #f5f5f5;
+  box-shadow: 1px 1px 1px #f5f5f5;
+}
+.card-item:hover{
+  border: 1px solid #8f8f8f8f;
+  box-shadow: 2px 2px 2px #8f8f8f8f;
+
+}
+.img-responsive{
+  max-height: 70px;
+  max-width: 70px;
+  margin-right: 5px;
+}
+.my-container-fluid{
+  width: 100%;
+  padding: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.my-list-item{
+  list-style-type: none;
+  .link{
+    color: #8f8f8f;
+    text-decoration-line: none;
+    font-size: 0.6rem;
+  }
+  .link:hover {
+    color: #2f2f2f;
+  }
+}
+
+.btn-add{
+  color: #DB5C00;
+  cursor: pointer;
+}
+
+.btn-add{
+  transition: 0.1s ease-in-out;
+}
+.btn-add:active{
+  font-size: 1.8em;
+  color: #28a745;
+}
+
+
+

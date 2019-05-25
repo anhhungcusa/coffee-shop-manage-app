@@ -1,7 +1,7 @@
 export class People {
   constructor(
       public name: string,
-      public birthDate: Date,
+      public birthDate: string,
       public phoneNumber: string,
       public address: string,
   ) {}

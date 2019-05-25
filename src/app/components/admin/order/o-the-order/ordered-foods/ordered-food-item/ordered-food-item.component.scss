@@ -1,0 +1,22 @@
+.orederd-list-food-item{
+  font-size: 0.7rem;
+  margin: 0.4rem;
+  padding: 0.5rem;
+  border-bottom:1px solid #7f7f7f7f;
+}
+
+.food-amout{
+  color: #28a745;
+
+}
+.btn-change{
+  color: #DB5C00;
+  font-size: 1.5em;
+  transition: 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-change:active{
+  font-size: 1.8em;
+  color: #28a745;
+}

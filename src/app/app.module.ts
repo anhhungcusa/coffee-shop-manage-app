@@ -16,6 +16,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { AdminModule } from './components/admin/admin.module';
 import { FoodService } from './services/food.service';
 import { DisableInputDirective } from './directives/disable-input.directive';
+import { FilterFoodPipe } from './pipes/filter-food.pipe';
+import { CalculatePricePipe } from './pipes/calculate-price.pipe';
 
 
 

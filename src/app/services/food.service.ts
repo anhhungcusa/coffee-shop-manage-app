@@ -15,8 +15,8 @@ export class FoodService {
   private foods: AngularFireList<Food>;
   private length: number;
 
-  selectedFoodEmitter: EventEmitter<SelectedFood> = new EventEmitter<SelectedFood>();
-  editStatusEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
+  // selectedFoodEmitter: EventEmitter<SelectedFood> = new EventEmitter<SelectedFood>();
+  // editStatusEmitter: EventEmitter<boolean> = new EventEmitter<boolean>();
   foods$: Observable<Food[]>;
   foodsDisplay: Food[];
   foodCategories: FoodCategory[];
@@ -63,15 +63,16 @@ export class FoodService {
   getIndex(value: string) {
     let result = '';
     for(const i of value){
-      if (i.charCodeAt(0) < 48 || i.charCodeAt(0) > 57){
+      if (i.charCodeAt(0) < 48 || i.charCodeAt(0) > 57) {
         return +result;
       }
       result += i;
     }
+
     return +result;
   }
 
-   getValue(index: number) {
+  getValue(index: number) {
      return new Promise((resolve, reject) => {
        if (this.foodsDisplay) {
          resolve(this.foodsDisplay[index]);
@@ -97,7 +98,7 @@ export class FoodService {
   addFood(value: any) {
     const newFood = new Food(
       this.length, value.idFoodCategory, value.name.toLocaleUpperCase(), value.imgUrl,
-      value.price, new Date(value.updateDate), value.isSelled
+      value.price, `${new Date(value.updateDate)}`, value.isSelled
     )
     this.dataStorageService.addObject(this.foods, `${this.length}`, newFood)
       .then(data => console.log('success: ', data))

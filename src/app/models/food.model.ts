@@ -9,7 +9,7 @@ export class Food {
     public name: string,
     public imgUrl: string,
     public price: number,
-    public updateDate: Date,
+    public updateDate: string,
     public isSelled: boolean = true
   ) {
     this.id = this.generateId(length);

@@ -1,0 +1,7 @@
+<ul class="orederd-list-food">
+  <app-ordered-food-item
+  *ngFor="let item of orderdFoodList; let i=index"
+  [orderedFoodItem]="item"
+  [index]="i"
+  ></app-ordered-food-item>
+</ul>

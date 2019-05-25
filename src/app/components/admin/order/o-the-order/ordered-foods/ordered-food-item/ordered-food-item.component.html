@@ -1,0 +1,24 @@
+<li class="orederd-list-food-item">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex align-items-center">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between align-items-center ">
+                <i class="fas fa-plus-circle   btn-change" (click)="addFood()"></i>
+            </div>
+          <div class="d-flex justify-content-between align-items-center text-1 food-amout ">
+
+            {{orderedFoodItem.amount}}
+            </div>
+            <div class="d-flex justify-content-between align-items-center ">
+                <i class="fas fa-minus-circle   btn-change" (click)="deleteFood()"></i>
+            </div>
+        </div>
+        <div class="text-2">
+            {{orderedFoodItem.food.name}}
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+          {{orderedFoodItem.food.price * orderedFoodItem.amount}}
+      </div>
+    </div>
+  </li>

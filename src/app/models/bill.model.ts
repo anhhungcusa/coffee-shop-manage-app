@@ -10,7 +10,7 @@ export class Bill {
     public idCustomer: string,
     public idEmployee: string,
     public isPaid: boolean,
-    public createDate: Date,
+    public createDate: string,
     public deliverAddress: string,
     public receiverName: string,
     public reciverPhoneNumber: string,
@@ -47,3 +47,5 @@ export class BillInfo {
     return this.food.price * this.amount;
   }
 }
+
+

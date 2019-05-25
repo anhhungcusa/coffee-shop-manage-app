@@ -131,7 +131,7 @@ export class FoodEditComponent implements OnInit {
       case BtnStatus.save:
         const formValue = this.foodForm.value;
         this.food.name  = formValue.name.toLocaleUpperCase();
-        this.food.updateDate = new Date();
+        this.food.updateDate = `${new Date()}`;
         this.food.idFoodCategory = formValue.idFoodCategory;
         this.food.price = formValue.price;
         this.food.imgUrl = formValue.imgUrl;

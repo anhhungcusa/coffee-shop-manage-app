@@ -1,0 +1,9 @@
+<div class="my-card">
+  <label>Danh mục món ăn</label>
+</div>
+<div class="my-card ">
+  <ul>
+    <app-o-food-category-item *ngFor="let item of foodCategories; let i=index" [foodCategory]="item" [index]="i">
+    </app-o-food-category-item>
+  </ul>
+</div>

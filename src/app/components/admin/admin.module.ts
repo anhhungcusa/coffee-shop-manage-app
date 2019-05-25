@@ -18,23 +18,43 @@ import { FoodEditComponent } from './foods/food-edit/food-edit.component';
 import { FoodItemComponent } from './foods/food-list/food-item/food-item.component';
 import { DisableInputDirective } from 'src/app/directives/disable-input.directive';
 import { FoodService } from 'src/app/services/food.service';
+import { OFoodCategoriesComponent } from './order/o-food-categories/o-food-categories.component';
+import { OFoodListComponent } from './order/o-food-list/o-food-list.component';
+import { OTheOrderComponent } from './order/o-the-order/o-the-order.component';
+import { OFoodCategoryItemComponent } from './order/o-food-categories/o-food-category-item/o-food-category-item.component';
+import { OFoodItemComponent } from './order/o-food-list/o-food-item/o-food-item.component';
+import { OrderService } from 'src/app/services/order.service';
+import { FilterFoodPipe } from 'src/app/pipes/filter-food.pipe';
+import { OrderedFoodsComponent } from './order/o-the-order/ordered-foods/ordered-foods.component';
+import { OrderedFoodItemComponent } from './order/o-the-order/ordered-foods/ordered-food-item/ordered-food-item.component';
+import { CalculatePricePipe } from 'src/app/pipes/calculate-price.pipe';
 
 @NgModule({
   declarations: [
+    NavbarComponent,
+    AdminComponent,
     OrderComponent,
+    OFoodCategoriesComponent,
+    OFoodCategoryItemComponent,
+    OFoodListComponent,
+    OFoodItemComponent,
+    OTheOrderComponent,
     FoodsComponent,
+    FoodListComponent,
+    FoodItemComponent,
+    FoodEditComponent,
     FoodCategoriesComponent,
     FoodCategoryItemComponent,
     FoodCategoryEditComponent,
     EmployeesComponent,
     CustomersComponent,
     AccountsComponent,
-    AdminComponent,
-    NavbarComponent,
-    FoodListComponent,
-    FoodEditComponent,
-    FoodItemComponent,
-    DisableInputDirective
+
+    FilterFoodPipe,
+    CalculatePricePipe,
+    DisableInputDirective,
+    OrderedFoodsComponent,
+    OrderedFoodItemComponent,
   ],
   imports: [
     CommonModule,
@@ -47,7 +67,8 @@ import { FoodService } from 'src/app/services/food.service';
   ],
   providers: [
     FoodCategoryService,
-    FoodService
+    FoodService,
+    OrderService
   ]
 })
 export class AdminModule { }

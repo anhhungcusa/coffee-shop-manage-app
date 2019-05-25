@@ -6,12 +6,12 @@ export class Employee extends People {
   public id: string;
   constructor(
       name: string,
-      birthDate: Date,
+      birthDate: string,
       phoneNumber: string,
       address: string,
       length: string,
       public type: string,
-      public updateDate: Date,
+      public updateDate: string,
       public status: boolean = true
   ) {
       super(name, birthDate, phoneNumber, address);

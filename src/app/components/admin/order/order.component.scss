@@ -1,0 +1,13 @@
+.t-fixed-area{
+  position: fixed;
+  left: 15px;
+  max-width: 350px;
+}
+
+.b-fixed-area{
+  position: fixed;
+
+  right: 15px;
+  max-width: 350px;
+  min-width: 300px;
+}

@@ -1,3 +1,23 @@
-<p>
-  order works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+    </div>
+    <div class="col-2 ">
+      <div class="t-fixed-area">
+          <app-o-food-categories [foodCategories]="foodCategories"></app-o-food-categories>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="col-12" *ngFor="let item of foodCategories">
+        <label>{{item.name}}</label>
+        <app-o-food-list [foods]="foods| filterFood: item.id"></app-o-food-list>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="b-fixed-area">
+          <app-o-the-order ></app-o-the-order>
+      </div>
+    </div>
+  </div>
+</div>

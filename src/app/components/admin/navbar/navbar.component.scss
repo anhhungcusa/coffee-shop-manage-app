@@ -1,0 +1,31 @@
+nav {
+  background-color: black;
+}
+ a {
+  color: white;
+ }
+
+.nav-item {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-item::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: orange;
+  transition: all .3s linear;
+}
+
+.nav-item::before {
+  bottom: 0px;
+  left: 0px;
+}
+
+.nav-item:hover::before {
+  width: 100%
+}
+

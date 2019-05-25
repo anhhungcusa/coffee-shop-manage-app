@@ -53,14 +53,12 @@
       </div>
       <div class="col-12">
           <div [ngSwitch]='btnStatus' class="my-btn-group" >
-            <button *ngSwitchCase="'add'"  type="submit" class="btn my-btn-item btn-success">Thêm</button>
-            <button *ngSwitchCase="'save'" type="submit" class="btn my-btn-item btn-success">Lưu</button>
-            <button *ngSwitchCase="'edit'" type="button" class="btn my-btn-item btn-info" (click)="editFood()">Sửa</button>
-            <button type="button"  class="btn my-btn-item btn-dark" (click)="onCancel()">Quay lại</button>
+            <button *ngSwitchCase="'add'"  type="submit" class="btn my-btn-item">Thêm</button>
+            <button *ngSwitchCase="'save'" type="submit" class="btn my-btn-item">Lưu</button>
+            <button *ngSwitchCase="'edit'" type="button" class="btn my-btn-item" (click)="editFood()">Sửa</button>
+            <button type="button"  class="btn my-btn-item" (click)="onCancel()">Quay lại</button>
           </div>
         </div>
-
   </div>
-
 </form>
 

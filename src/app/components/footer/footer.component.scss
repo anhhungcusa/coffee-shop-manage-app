@@ -1,0 +1,33 @@
+footer {
+  background-color: black;
+  color: white;
+}
+#content_footer {
+  padding-top: 100px;
+  padding-bottom: 20px;
+}
+
+ul li {
+  display: block;
+}
+.footer_title {
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.hotline_footer p, .address_footer p {
+  color: white;
+  line-height: 20px;
+  margin: 0;
+}
+.footer_linkLists {
+  padding: 0;
+  margin: 0;
+}
+.footer_linkLists li a {
+  line-height: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+}

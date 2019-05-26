@@ -16,11 +16,15 @@ export class DataStorageService {
   }
 
   addObject(firebaseList: AngularFireList<any>, key: string, value: any) {
-    return firebaseList.update(key, value);
+    return firebaseList.update(key, value)
+    .then(data => console.log('success: ', data))
+    .catch(err => console.log('err :', err));
   }
 
   updateObject(firebaseList: AngularFireList<any>, key: string, value: any) {
-    return firebaseList.update(key, value);
+    return firebaseList.update(key, value)
+    .then(data => console.log('success: ', data))
+    .catch(err => console.log('err :', err));
   }
 
 }

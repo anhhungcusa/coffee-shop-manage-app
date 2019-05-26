@@ -100,15 +100,12 @@ export class FoodService {
       this.length, value.idFoodCategory, value.name.toLocaleUpperCase(), value.imgUrl,
       value.price, `${new Date(value.updateDate)}`, value.isSelled
     )
-    this.dataStorageService.addObject(this.foods, `${this.length}`, newFood)
-      .then(data => console.log('success: ', data))
-      .catch(err => console.log('err :', err));
+    this.dataStorageService.addObject(this.foods, `${this.length}`, newFood);
   }
 
   updateFood(value: Food, index: number) {
     this.dataStorageService.updateObject(this.foods , `${index}`, value)
-    .then(data => console.log('success: ', data))
-    .catch(err => console.log('err :', err));
+
   }
 
 

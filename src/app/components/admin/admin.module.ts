@@ -28,17 +28,20 @@ import { FilterFoodPipe } from 'src/app/pipes/filter-food.pipe';
 import { OrderedFoodsComponent } from './order/o-the-order/ordered-foods/ordered-foods.component';
 import { OrderedFoodItemComponent } from './order/o-the-order/ordered-foods/ordered-food-item/ordered-food-item.component';
 import { CalculatePricePipe } from 'src/app/pipes/calculate-price.pipe';
+import { FooterComponent } from '../footer/footer.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     AdminComponent,
-    OrderComponent,
-    OFoodCategoriesComponent,
-    OFoodCategoryItemComponent,
-    OFoodListComponent,
-    OFoodItemComponent,
-    OTheOrderComponent,
+    // OrderComponent,
+    // OFoodCategoriesComponent,
+    // OFoodCategoryItemComponent,
+    // OFoodListComponent,
+    // OFoodItemComponent,
+    // OTheOrderComponent,
+    // OrderedFoodsComponent,
+    // OrderedFoodItemComponent,
     FoodsComponent,
     FoodListComponent,
     FoodItemComponent,
@@ -50,11 +53,9 @@ import { CalculatePricePipe } from 'src/app/pipes/calculate-price.pipe';
     CustomersComponent,
     AccountsComponent,
 
-    FilterFoodPipe,
     CalculatePricePipe,
     DisableInputDirective,
-    OrderedFoodsComponent,
-    OrderedFoodItemComponent,
+
   ],
   imports: [
     CommonModule,
@@ -66,9 +67,6 @@ import { CalculatePricePipe } from 'src/app/pipes/calculate-price.pipe';
     AdminComponent
   ],
   providers: [
-    FoodCategoryService,
-    FoodService,
-    OrderService
   ]
 })
 export class AdminModule { }

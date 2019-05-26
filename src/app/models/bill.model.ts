@@ -3,7 +3,6 @@ import { Food } from './food.model';
 export class Bill {
   private static readonly idPrefix = 'O';
   private static readonly numberAmount = 4;
-  public priceTotal = 0;
   public id: string;
   constructor(
     length: number,
@@ -14,12 +13,13 @@ export class Bill {
     public deliverAddress: string,
     public receiverName: string,
     public reciverPhoneNumber: string,
-    public orderedFoodList: BillInfo[]
+    public orderedFoodList: BillInfo[],
+    public priceTotal = 0
   ) {
     this.id = this.generateId(length);
-    this.priceTotal = orderedFoodList.reduce(
-      (acc: number, curr: BillInfo) => acc + curr.calculatePrice(), 0
-    );
+    // this.priceTotal = orderedFoodList.reduce(
+    //   (acc: number, curr: BillInfo) => acc + curr.calculatePrice(), 0
+    // );
   }
 
   generateId(length) {

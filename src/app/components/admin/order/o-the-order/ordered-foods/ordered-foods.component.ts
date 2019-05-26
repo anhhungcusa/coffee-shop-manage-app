@@ -9,7 +9,7 @@ import { BillInfo } from 'src/app/models/bill.model';
 export class OrderedFoodsComponent implements OnInit {
 
   @Input() orderdFoodList: BillInfo[];
-
+  @Input() isCustomer: boolean;
   constructor() { }
 
   ngOnInit() {

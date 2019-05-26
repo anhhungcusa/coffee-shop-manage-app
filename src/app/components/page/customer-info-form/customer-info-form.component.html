@@ -1,0 +1,60 @@
+
+
+<div class="container-fluid">
+
+<div class="row">
+  <div class="col-12">
+    <form id="foodForm" class="my-card" [formGroup]="infoForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+          <div class="form-row col-12">
+              <label for="receiverName">Tên người nhận</label>
+            <input
+            formControlName="receiverName"
+             class="form-control "
+            type="text" name="" id="receiverName">
+          </div>
+          <div class="form-row col-12">
+              <label for="receiverPhoneNumber">Số điện thoại</label>
+            <input
+            [ngClass]=""
+            formControlName="receiverPhoneNumber"
+             class="form-control "
+            type="text" name="" id="receiverPhoneNumber">
+          </div>
+          <div class="form-row col-12">
+              <label for="deliverAddress">Địa chỉ</label>
+            <input
+            [ngClass]=""
+             class="form-control "
+            formControlName="deliverAddress"
+            type="text" name="" id="deliverAddress">
+          </div>
+          <div class="form-main col-12">
+
+          <div class="col-12">
+              <div  class="my-btn-group" >
+                <button  type="submit" class="btn my-btn-item">Thanh toán</button>
+                <button  type="button" (click)="comeBack()"  class="btn my-btn-item">Quay lại</button>
+              </div>
+            </div>
+      </div>
+      </div>
+    </form>
+  </div>
+
+    <div class="col-12" [ngSwitch]="isPaid">
+      <div *ngSwitchCase="'true'">
+        <div class="alert alert-success" role="alert">
+          Bạn đã thanh toán thành công
+        </div>
+      </div>
+      <div *ngSwitchCase="'zero'">
+        <div class="alert alert-warning" role="alert">
+          Bạn chưa chọn món
+        </div>
+      </div>
+    </div>
+</div>
+
+
+</div>

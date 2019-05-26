@@ -1,28 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { FoodService } from 'src/app/services/food.service';
-import { FoodCategoryService } from 'src/app/services/food-category.service';
 import { Food } from 'src/app/models/food.model';
 import { FoodCategory } from 'src/app/models/food-category.model';
+import { FoodService } from 'src/app/services/food.service';
+import { FoodCategoryService } from 'src/app/services/food-category.service';
 import { OrderService } from 'src/app/services/order.service';
-import { BillInfo } from 'src/app/models/bill.model';
 import { EEmitterService } from 'src/app/services/e-emitter.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.scss'],
+  selector: 'app-order-page',
+  templateUrl: './order-page.component.html',
+  styleUrls: ['./order-page.component.scss'],
   providers: [EEmitterService]
 })
-export class OrderComponent implements OnInit {
+export class OrderPageComponent implements OnInit {
 
   foods: Food[];
   foodCategories: FoodCategory[];
+  isCustomer = true;
+  onSeletedFood = false;
 
 
   constructor(
     private foodService: FoodService,
     private foodCategoryService: FoodCategoryService,
-    private orderService: OrderService
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -32,7 +35,15 @@ export class OrderComponent implements OnInit {
       .subscribe((data: FoodCategory[]) => {
         this.foodCategories = [...data];
       });
+  }
 
+  onReceive(event) {
+    this.router.navigate(['../press-info'], {relativeTo: this.route});
+  }
+
+  onComeBack() {
+    this.onSeletedFood = false;
+    console.log(1)
   }
 
 }

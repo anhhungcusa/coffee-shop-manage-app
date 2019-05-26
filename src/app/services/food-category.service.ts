@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { DataStorageService } from './data-storage.service';
 import { AngularFireList } from '@angular/fire/database';
 import { Logs } from 'selenium-webdriver';
+import { BillInfo } from '../models/bill.model';
 
 @Injectable()
 export class FoodCategoryService {
@@ -11,6 +12,7 @@ export class FoodCategoryService {
   private foodCategories: AngularFireList<FoodCategory>;
   private length: number;
   private lengthSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+
 
   selectedFoodCategoryEmitter: EventEmitter<SelectedFoodCategory> = new EventEmitter<SelectedFoodCategory>();
   foodCategories$: Observable<FoodCategory[]>;
@@ -32,15 +34,10 @@ export class FoodCategoryService {
 
   addFoodCategory(value: any) {
     const newFoodCategory = new FoodCategory(this.length, value.name.toLocaleUpperCase(), value.status);
-    return this.dataStorageService.addObject(this.foodCategories, `${this.length}`, newFoodCategory)
-      .then(data => console.log('success: ', data))
-      .catch(err => console.log('err :', err));
+    return this.dataStorageService.addObject(this.foodCategories, `${this.length}`, newFoodCategory);
   }
 
   updateFoodCategory(value: FoodCategory, index: number) {
-    return this.dataStorageService.updateObject(this.foodCategories, `${index}`, value)
-      .then(data => console.log('success: ', data))
-      .catch(err => console.log('err :', err));
+    return this.dataStorageService.updateObject(this.foodCategories, `${index}`, value);
   }
-
 }

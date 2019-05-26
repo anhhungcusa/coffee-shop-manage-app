@@ -5,31 +5,27 @@ nav {
   color: white;
  }
 
-.nav-item {
+ .nav-item {
   position: relative;
   font-size: 20px;
   font-weight: 600;
+  cursor: pointer;
 }
 
-.nav-item::before {
+ .nav-item::before {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
   background-color: orange;
-  transition: all .3s linear;
+  transition: all .2s linear;
 }
 
-.nav-item::before {
+ .nav-item::before {
   bottom: 0px;
   left: 0px;
 }
 
-.nav-item:hover::before {
+ .nav-item:hover::before {
   width: 100%
 }
-
-.active{
-  color: red;
-}
-

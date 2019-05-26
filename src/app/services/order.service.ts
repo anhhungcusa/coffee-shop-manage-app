@@ -17,11 +17,11 @@ export class OrderService {
 
 
   bills$: Observable<Bill[]>;
+  orderdFoodList: BillInfo[] = [];
+  orderdFoodListForCusomer: BillInfo[] = [];
   foods: Food[];
   foodCategories: FoodCategory[];
   groupFood: any[];
-  selectedFood: EventEmitter<Food> = new EventEmitter<Food>();
-  deletedFoodIndex: EventEmitter<number> = new EventEmitter<number>();
 
 
   constructor(
@@ -36,6 +36,7 @@ export class OrderService {
     });
 
 
+
   }
 
   creatBill(orderFoodList: BillInfo[],
@@ -47,14 +48,12 @@ export class OrderService {
             receiverName: string = OrderService.valueDefault,
             receiverPhoneNumber: string = OrderService.valueDefault,
   ) {
-    console.log(this.length)
     if (this.length) {
       const createDate = new Date();
       const newBill = new Bill(
         this.length, idCustomer, idEmployee, isPaid, `${createDate}`,
-        deliverAddress, receiverName, receiverPhoneNumber, orderFoodList);
-      this.dataStorageService.addObject(this.bills, `${this.length}`, newBill)
-      console.log(newBill, createDate);
+        deliverAddress, receiverName, receiverPhoneNumber, orderFoodList, priceTotal);
+      this.dataStorageService.addObject(this.bills, `${this.length}`, newBill);
     }
   }
 

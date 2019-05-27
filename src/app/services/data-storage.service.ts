@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,17 @@ export class DataStorageService {
   getData<T>(key: string) {
     return this.db.list<T>(key);
   }
+  getobjectData<T>(key: string) {
+    return this.db.object<T>(key);
+  }
 
   addObject(firebaseList: AngularFireList<any>, key: string, value: any) {
     return firebaseList.update(key, value)
     .then(data => console.log('success: ', data))
     .catch(err => console.log('err :', err));
   }
+
+
 
   updateObject(firebaseList: AngularFireList<any>, key: string, value: any) {
     return firebaseList.update(key, value)

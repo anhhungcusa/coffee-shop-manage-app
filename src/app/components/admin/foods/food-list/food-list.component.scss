@@ -2,6 +2,10 @@
 .my-container{
   max-height: 600px;
   overflow-y: scroll;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #e4c7ab;
+  box-shadow: 0 0 2px 2px #CD853F;
 }
 
 .my-list-group{
@@ -9,8 +13,17 @@
   margin-top: 20px;
 
 }
-
+h2 {
+  font-weight: 600;
+  text-shadow:  0 0 2px black;
+}
 .btn-new{
   cursor: pointer;
   color: #82C91E;
 }
+// .food-list {
+//   height: auto;
+//   width: auto;
+//   box-shadow: 1px 1px 5px 5px;
+//   border-radius: 2%;
+// }

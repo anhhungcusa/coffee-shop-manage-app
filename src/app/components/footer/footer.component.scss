@@ -6,7 +6,13 @@ footer {
   padding-top: 100px;
   padding-bottom: 20px;
 }
-
+ul li {
+  display: block;
+  font-size: 14px;
+}
+div p {
+  font-size: 14px;
+}
 ul li {
   display: block;
 }
@@ -31,3 +37,20 @@ ul li {
   font-family: 'Times New Roman', Times, serif;
   color: white;
 }
+.address_footer {
+  margin-top: 30px;
+}
+.copyright_footer {
+  border-top: 1px solid white;
+  margin-top: 30px;
+  padding: 20px 0 0;
+}
+.copyright_footer .copyright_col {
+  color: white;
+  justify-content: center;
+}
+.copyright_text {
+  // flex: 3 1 0;
+  justify-content: center;
+}
+

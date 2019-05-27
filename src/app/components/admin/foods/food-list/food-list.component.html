@@ -1,27 +1,21 @@
-
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-10 text-center">
-          <h2 class="text-header">Danh sách món ăn</h2>
-        </div>
-        <div class="col-2 d-flex justify-content-center align-items-center">
-          <a routerLink="new"
-          routerLinkActive="my-active">
-              <i (click)="addFood()" class="fas fa-plus-circle  fa-2x fa-fw btn-new"></i>
-          </a>
-        </div>
+  <div class="row">
+    <div class="col-10 text-center">
+      <h2 class="text-header">Danh sách món ăn</h2>
+    </div>
+    <div class="col-2 d-flex justify-content-center align-items-center">
+      <a routerLink="new" routerLinkActive="my-active">
+        <i (click)="addFood()" class="fas fa-plus-circle  fa-2x fa-fw btn-new"></i>
+      </a>
+    </div>
+  </div>
 </div>
 <div class="container my-container food-list">
-    <div class="row">
-      <div class="col-12">
-          <div class="my-list-group list-group">
-              <app-food-item
-                *ngFor="let item of foods; let i=index"
-                [index]="i" [food]="item"
-
-              ></app-food-item>
-          </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="my-list-group list-group">
+        <app-food-item *ngFor="let item of foods; let i=index" [index]="i" [food]="item"></app-food-item>
       </div>
     </div>
-
   </div>
+</div>

@@ -2,3 +2,12 @@
   margin-bottom: 5px
 }
 
+// hover button
+.my-btn-item {
+  transition: all .3s linear;
+}
+.my-btn-item:hover {
+  color: orange;
+  background-color: white;
+  border: 1px solid orange;
+}

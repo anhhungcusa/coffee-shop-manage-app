@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid my-container-fluid">
   <div class="row">
     <div class="col-12">
     </div>
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="col-6">
-      <div class="col-12" *ngFor="let item of foodCategories">
+      <div class="col-12 my-order-list" *ngFor="let item of foodCategories">
         <label>{{item.name}}</label>
         <app-o-food-list [foods]="foods| filterFood: item.id"></app-o-food-list>
       </div>

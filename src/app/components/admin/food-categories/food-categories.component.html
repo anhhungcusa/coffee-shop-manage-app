@@ -1,15 +1,17 @@
 
-<div class="container my-container">
-  <div class="row">
-    <div class="col-12">
-        <app-food-category-edit></app-food-category-edit>
-    </div>
-    <div class="col-12">
-        <ul class="my-list-group list-group">
-            <app-food-category-item *ngFor="let item of foodCategories; let i = index"
-            [index]='i' [foodCategory]='item'
-            ></app-food-category-item>
-        </ul>
+<div class="my-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 my-food-category-edit">
+          <app-food-category-edit></app-food-category-edit>
+      </div>
+      <div class="col-12 my-food-category-item">
+          <ul class="my-list-group list-group">
+              <app-food-category-item *ngFor="let item of foodCategories; let i = index"
+              [index]='i' [foodCategory]='item'
+              ></app-food-category-item>
+          </ul>
+      </div>
     </div>
   </div>
 

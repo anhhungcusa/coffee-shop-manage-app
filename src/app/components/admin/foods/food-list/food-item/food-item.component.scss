@@ -1,8 +1,15 @@
 .my-list-group-item{
   margin-top: 5px;
   margin-bottom: 5px;
-}
 
+}
+.my-container-fluid {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #d8a068;
+}
 .my-list-group-item:hover{
   background: pink;
 }

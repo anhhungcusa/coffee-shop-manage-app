@@ -33,6 +33,7 @@ import { OrderService } from './services/order.service';
 import { FoodCategoryService } from './services/food-category.service';
 import { EEmitterService } from './services/e-emitter.service';
 import { CustomerInfoFormComponent } from './components/page/customer-info-form/customer-info-form.component';
+import { OrderQueueService } from './services/order-queue.service';
 
 
 
@@ -73,6 +74,7 @@ import { CustomerInfoFormComponent } from './components/page/customer-info-form/
     FoodCategoryService,
     FoodService,
     OrderService,
+    OrderQueueService
   ],
   bootstrap: [AppComponent]
 })

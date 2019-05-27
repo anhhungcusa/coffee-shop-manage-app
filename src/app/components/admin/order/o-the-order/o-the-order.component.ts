@@ -4,6 +4,7 @@ import { Food } from 'src/app/models/food.model';
 import { OrderService } from 'src/app/services/order.service';
 import { FoodCategoryService } from 'src/app/services/food-category.service';
 import { EEmitterService } from 'src/app/services/e-emitter.service';
+import { OrderQueueService } from 'src/app/services/order-queue.service';
 
 
 @Component({
@@ -20,12 +21,13 @@ export class OTheOrderComponent implements OnInit, OnChanges, DoCheck, OnDestroy
   orderdFoodList: BillInfo[];
   totalPrice = 0;
   btnBan = true;
+  isOpen = null;
 
 
   constructor(
     private eemitterService: EEmitterService,
     private orderService: OrderService,
-
+    private orderQueue: OrderQueueService
   ) { }
   ngOnChanges() {
   }
@@ -43,9 +45,14 @@ export class OTheOrderComponent implements OnInit, OnChanges, DoCheck, OnDestroy
       // this.unsubscribe(this.orderService.selectedFoodForCusomer,
       //                this.orderService.deletedFoodIndexForCusomer);
     }
+    this.isOpen = this.orderQueue.isOpen;
     this.subscribe(this.eemitterService.selectedFood,
       this.eemitterService.deletedFoodIndex);
-
+    this.orderQueue.orderQueue$.subscribe( data => {
+      this.isOpen = data.status.isOpen;
+    });
+    this.isOpen = this.orderQueue.isOpen;
+    console.log(this.isOpen)
   }
   ngDoCheck() {
     this.calculateTotalPrice();
@@ -66,7 +73,9 @@ export class OTheOrderComponent implements OnInit, OnChanges, DoCheck, OnDestroy
   pay() {
     if (!this.btnBan) {
       if (this.isCustomer) {
-        this.orderdFoodListEmitter.emit(this.orderdFoodList);
+        if (this.isOpen) {
+          this.orderdFoodListEmitter.emit(this.orderdFoodList);
+        }
         // this.orderService.orderdFoodListForCusomer = [];
         // this.orderdFoodList = this.orderService.orderdFoodListForCusomer;
       } else {

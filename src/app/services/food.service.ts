@@ -30,8 +30,8 @@ export class FoodService {
     this.foods$.subscribe(data => {
       this.length = data.length;
       this.foodsDisplay = data;
-    });
 
+    });
     this.foodCategoryService.foodCategories$
     .subscribe((data: FoodCategory[]) => {
       this.foodCategories = [...data];

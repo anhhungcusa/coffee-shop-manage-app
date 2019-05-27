@@ -3,6 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { OrderService } from 'src/app/services/order.service';
 import { EEmitterService } from 'src/app/services/e-emitter.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { OrderQueueService } from 'src/app/services/order-queue.service';
 
 @Component({
   selector: 'app-customer-info-form',
@@ -13,11 +14,12 @@ export class CustomerInfoFormComponent implements OnInit {
 
   @Output() comeBackEmitter: EventEmitter<void> = new EventEmitter<void>();
   infoForm: FormGroup;
-  isPaid : string;
+  isPaid: string;
   constructor(
     private orderService: OrderService,
     private route: ActivatedRoute,
     private router: Router,
+    private orderQueueService: OrderQueueService
   ) { }
 
   ngOnInit() {
@@ -26,9 +28,15 @@ export class CustomerInfoFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.infoForm.value);
-    console.log(this.orderService.orderdFoodListForCusomer);
+
     if (this.orderService.orderdFoodListForCusomer.length > 0) {
+      let order = {
+        orderedFoodList: this.orderService.orderdFoodListForCusomer,
+        idCustomer: OrderQueueService.valueDefault,
+        priceTotal: this.orderQueueService.calculateTotalPrice(this.orderService.orderdFoodListForCusomer)
+      }
+      order = Object.assign(order, this.infoForm.value)
+      this.orderQueueService.addOrdertoQueue(order);
       this.orderService.orderdFoodListForCusomer = [];
       this.isPaid = 'true';
     } else {

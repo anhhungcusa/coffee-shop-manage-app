@@ -45,5 +45,8 @@ export class OrderPageComponent implements OnInit {
     this.onSeletedFood = false;
     console.log(1)
   }
+  showCart() {
+    this.router.navigate(['../my-cart'], {relativeTo: this.route});
+  }
 
 }

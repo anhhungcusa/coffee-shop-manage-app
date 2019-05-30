@@ -1,0 +1,17 @@
+.card-food{
+ width: 190px;
+ min-height: 300px;
+}
+
+.card-food-content{
+  display: flex;
+  align-content: space-between;
+  height: 100%;
+}
+.my-container-fluid{
+  width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}

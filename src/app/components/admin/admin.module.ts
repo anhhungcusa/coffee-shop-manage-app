@@ -29,6 +29,9 @@ import { OrderedFoodsComponent } from './order/o-the-order/ordered-foods/ordered
 import { OrderedFoodItemComponent } from './order/o-the-order/ordered-foods/ordered-food-item/ordered-food-item.component';
 import { CalculatePricePipe } from 'src/app/pipes/calculate-price.pipe';
 import { FooterComponent } from '../footer/footer.component';
+import { OrderQueueComponent } from './order-queue/order-queue.component';
+import { OrderDetailComponent } from './order-queue/order-detail/order-detail.component';
+import { OrderItemComponent } from './order-queue/order-item/order-item.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +58,9 @@ import { FooterComponent } from '../footer/footer.component';
 
     CalculatePricePipe,
     DisableInputDirective,
+    OrderQueueComponent,
+    OrderDetailComponent,
+    OrderItemComponent,
 
   ],
   imports: [

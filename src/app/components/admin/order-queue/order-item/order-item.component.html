@@ -1,0 +1,21 @@
+<div class="container-fluid my-container-fluid">
+    <div class="row">
+      <div class=" col-7 col-sm-9">
+        <a class=" my-list-group-item list-group-item list-group-item-action" [routerLink]="[id]"
+          routerLinkActive="my-active">
+          <div class="text-3">Stt: {{stt}}, số lượng: {{amount}}, tổng tiền: {{order.priceTotal | currency: ' ' :'symbol':'4.0-0'}} </div>
+          <div class="text-4">Tên: {{order.receiverName}}, sđt: {{order.receiverPhoneNumber}} </div>
+        </a>
+
+      </div>
+      <div class=" col-5 col-sm-3 d-flex justify-content-center align-items-center">
+        <button type="button" class="btn btn-info btn-crud" (click)="accept()">
+            <i class="fas fa-check"></i>
+        </button>
+        <button type="button" class="btn btn-info btn-crud" (click)="reject()">
+            <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>

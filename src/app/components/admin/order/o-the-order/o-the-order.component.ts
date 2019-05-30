@@ -18,10 +18,12 @@ export class OTheOrderComponent implements OnInit, OnChanges, DoCheck, OnDestroy
   @Input() isCustomer = false;
 
   @Output() orderdFoodListEmitter: EventEmitter<BillInfo[]> = new EventEmitter<BillInfo[]>();
+  @Output() clearEmitter: EventEmitter<void> = new EventEmitter<void>();
   orderdFoodList: BillInfo[];
   totalPrice = 0;
   btnBan = true;
-  isOpen = null;
+  isOpen = false;
+  @Input() isCart = true;
 
 
   constructor(
@@ -34,25 +36,27 @@ export class OTheOrderComponent implements OnInit, OnChanges, DoCheck, OnDestroy
   ngOnInit() {
     if (this.isCustomer) {
       this.orderdFoodList = this.orderService.orderdFoodListForCusomer;
+      this.orderQueue.orderQueue$.subscribe( data => {
+        this.isOpen = data.status.isOpen;
+      });
+      this.isOpen = this.orderQueue.isOpen;
       // this.subscribe(this.eemitterService.selectedFoodForCusomer,
       //   this.eemitterService.deletedFoodIndexForCusomer);
       // this.unsubscribe(this.orderService.selectedFood,
       //                 this.orderService.deletedFoodIndex);
     } else {
       this.orderdFoodList = this.orderService.orderdFoodList;
+      this.isOpen = true;
       // this.subscribe(this.eemitterService.selectedFood,
       //                this.eemitterService.deletedFoodIndex);
       // this.unsubscribe(this.orderService.selectedFoodForCusomer,
       //                this.orderService.deletedFoodIndexForCusomer);
     }
-    this.isOpen = this.orderQueue.isOpen;
     this.subscribe(this.eemitterService.selectedFood,
       this.eemitterService.deletedFoodIndex);
-    this.orderQueue.orderQueue$.subscribe( data => {
-      this.isOpen = data.status.isOpen;
-    });
-    this.isOpen = this.orderQueue.isOpen;
-    console.log(this.isOpen)
+
+    // this.isOpen = this.orderQueue.isOpen;
+    // console.log(this.isOpen);
   }
   ngDoCheck() {
     this.calculateTotalPrice();
@@ -69,6 +73,12 @@ export class OTheOrderComponent implements OnInit, OnChanges, DoCheck, OnDestroy
     // this.eemitterService.selectedFood.complete();
 
   }
+  clearOrder() {
+    this.orderService.orderdFoodListForCusomer = [];
+    this.orderdFoodList = this.orderService.orderdFoodListForCusomer;
+    // this.clearEmitter.emit();
+
+  }
 
   pay() {
     if (!this.btnBan) {
@@ -79,6 +89,7 @@ export class OTheOrderComponent implements OnInit, OnChanges, DoCheck, OnDestroy
         // this.orderService.orderdFoodListForCusomer = [];
         // this.orderdFoodList = this.orderService.orderdFoodListForCusomer;
       } else {
+
         this.orderService.creatBill(this.orderdFoodList, true, this.totalPrice);
         this.orderService.orderdFoodList = [];
         this.orderdFoodList = this.orderService.orderdFoodList;

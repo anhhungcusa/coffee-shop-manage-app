@@ -1,0 +1,11 @@
+.flex-area{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.t-fixed-area{
+  position: sticky;
+  top: 0;
+  left: 15px;
+  // box-shadow: 2px 2px black;
+}

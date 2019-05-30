@@ -1,0 +1,94 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <p>
+                        ID
+                     </p>
+                </div>
+                <div class="col-9">
+                    <p>
+                        {{id}}
+                     </p>
+                </div>
+              </div>
+        </div>
+      </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-6">
+                  <p>
+                      Số lượng: {{amount}}
+                   </p>
+              </div>
+              <div class="col-6">
+                  <p>
+                      Tổng tiền: {{order.priceTotal| currency: ' ' :'symbol':'4.0-0'}}
+                   </p>
+              </div>
+            </div>
+      </div>
+
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-6">
+                  <p>
+                     ID khác hàng: {{order.idCustomer}}
+                   </p>
+              </div>
+            <div class="col-6">
+                <p>
+                  Tên người nhận: {{order.receiverName}}
+                 </p>
+            </div>
+            <div class="col-6">
+                <p>
+                  SĐT:  {{order.receiverPhoneNumber}}
+                 </p>
+            </div>
+            <div class="col-6">
+                <p>
+                  Ngày đặt:<br>{{order.createDate| date: 'medium'}}
+                 </p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Địa chỉ: {{order.deliverAddress}}
+                      </p>
+                </div>
+                <div class="col-12">
+                    <p>
+                        Đã thanh toán: {{order.isPaid ? 'Rồi': 'Chưa'}}
+                     </p>
+                </div>
+                </div>
+        </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <p> Danh sách món ăn</p>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+      <div class="row my-container">
+          <div class="col-12" *ngFor="let item of order.orderedFoodList">
+              <p class="text-3">
+                {{item.food.name}}, số lượng:{{item.amount}}, tổng:  {{item.food.price * item.amount | currency: ' ' :'symbol':'4.0-0'}}
+              </p>
+            </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

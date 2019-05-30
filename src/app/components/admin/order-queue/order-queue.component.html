@@ -1,0 +1,14 @@
+<div class="container-fluid my-container-fluid">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-7 col-lg-7 ">
+        <app-order-item *ngFor="let item of orderList; let i=index" [stt]="i" [id]="item[0]" [order]="item[1]"
+          (indexEmitter)="remove($event)"
+        ></app-order-item>
+      </div>
+      <div class="col-12 col-md-5 col-lg-5">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

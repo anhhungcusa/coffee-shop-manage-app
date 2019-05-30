@@ -1,0 +1,12 @@
+p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.my-container{
+  max-height: 350px;
+  overflow-y: scroll;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: #e4c7ab;
+  box-shadow: 0 0 2px 2px #CD853F;
+}

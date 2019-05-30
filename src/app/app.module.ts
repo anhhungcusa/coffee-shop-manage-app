@@ -34,6 +34,9 @@ import { FoodCategoryService } from './services/food-category.service';
 import { EEmitterService } from './services/e-emitter.service';
 import { CustomerInfoFormComponent } from './components/page/customer-info-form/customer-info-form.component';
 import { OrderQueueService } from './services/order-queue.service';
+import { CartComponent } from './components/page/cart/cart.component';
+import { FillterFood2Pipe } from './pipes/fillter-food2.pipe';
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -45,7 +48,8 @@ import { OrderQueueService } from './services/order-queue.service';
     HomeComponent,
     PageNotFoundComponent,
     // PageComponent,
-    CustomerInfoFormComponent,
+
+    CartComponent,
     OrderPageComponent,
     OrderComponent,
     OFoodCategoriesComponent,
@@ -57,6 +61,9 @@ import { OrderQueueService } from './services/order-queue.service';
     OrderedFoodItemComponent,
 
      FilterFoodPipe,
+
+     LoginComponent,
+
   ],
   imports: [
     BrowserModule,

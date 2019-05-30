@@ -20,13 +20,20 @@ import { MenuComponent } from './menu/menu.component';
 import { CartComponent } from './cart/cart.component';
 import { PageRoutingModule } from './page-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CustomerInfoFormComponent } from './customer-info-form/customer-info-form.component';
+import { MFoodItemComponent } from './menu/m-food-item/m-food-item.component';
+import { MFoodCategoryComponent } from './menu/m-food-category/m-food-category.component';
+import { FillterFood2Pipe } from 'src/app/pipes/fillter-food2.pipe';
 
 @NgModule({
   declarations: [
   PageComponent,
   NavbarCComponent,
   MenuComponent,
-  CartComponent
+  CustomerInfoFormComponent,
+  MFoodItemComponent,
+  MFoodCategoryComponent,
+  FillterFood2Pipe,
 ],
   imports: [
     CommonModule,

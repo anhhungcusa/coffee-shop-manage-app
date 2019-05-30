@@ -4,7 +4,7 @@
       <a class=" my-list-group-item list-group-item list-group-item-action" [routerLink]="[index]+[food.id]+[food.name]"
         routerLinkActive="my-active">
 
-        <p class="text-content">ID: {{food.id}}, {{food.name}}, giá: {{food.price}} </p>
+        <p class="text-content">ID: {{food.id}}, {{food.name}}, giá: {{food.price | currency: ' ' :'symbol':'4.0-0'}} </p>
         <p class="text-content text-description">Ngày cập nhật: {{food.updateDate | date}}, trạng thái:
           {{food.isSelled.toString() | i18nSelect: isSelledMap}} </p>
       </a>

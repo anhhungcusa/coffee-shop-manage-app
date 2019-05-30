@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyDxaUShlQ6mRaBfu_LPSa1yYkC-P3H7Hc0",
-    authDomain: "lavida-65568.firebaseapp.com",
-    databaseURL: "https://lavida-65568.firebaseio.com",
-    projectId: "lavida-65568",
-    storageBucket: "lavida-65568.appspot.com",
-    messagingSenderId: "778276459791",
-    appId: "1:778276459791:web:1193398793fd3816"
+    apiKey: 'AIzaSyBg1qNtAb6XQO85zUtxqHMNZoOWjKqBx9c',
+    authDomain: 'coffee-shop-manage-app.firebaseapp.com',
+    databaseURL: 'https://coffee-shop-manage-app.firebaseio.com',
+    projectId: 'coffee-shop-manage-app',
+    storageBucket: 'coffee-shop-manage-app.appspot.com',
+    messagingSenderId: '629239011499',
+
   }
 };
 

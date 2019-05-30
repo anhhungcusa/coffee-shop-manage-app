@@ -9,6 +9,8 @@ import { EmployeesComponent } from './employees/employees.component';
 import { OrderComponent } from './order/order.component';
 import { FoodEditComponent } from './foods/food-edit/food-edit.component';
 import { FoodItemComponent } from './foods/food-list/food-item/food-item.component';
+import { OrderQueueComponent } from './order-queue/order-queue.component';
+import { OrderDetailComponent } from './order-queue/order-detail/order-detail.component';
 
 const adminRoutes: Routes = [
   {
@@ -20,6 +22,9 @@ const adminRoutes: Routes = [
         {path: 'new', component: FoodEditComponent},
         {path: ':id', component: FoodEditComponent},
         {path: ':id/edit', component: FoodEditComponent},
+      ]},
+      {path: 'order-queue', component: OrderQueueComponent, children: [
+        {path: ':id', component: OrderDetailComponent}
       ]},
       {path: 'customers', component: CustomersComponent},
       {path: 'food-categories', component: FoodCategoriesComponent},

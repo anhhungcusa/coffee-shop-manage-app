@@ -1,3 +1,33 @@
-<p>
-  menu works!
-</p>
+<div class="container">
+  <div class="row">
+      <div class="col-3">
+          <div class="my-card t-fixed-area ">
+            <ul>
+              <app-m-food-category *ngFor="let item of foodCategories; let i=index" [foodCategory]="item" [index]="i">
+              </app-m-food-category>
+            </ul>
+          </div>
+        </div>
+        <div class="col-9">
+          <div class="menu">
+            <div *ngFor="let item of foodCategories;">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-12">
+                    {{item.name}}
+                  </div>
+                  <div class="col-12 flex-area">
+                      <app-m-food-item *ngFor="let item of foods|fillterFood2:item.id ; let i=index"
+                      [food]="item" [index]="i"
+                    ></app-m-food-item>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+  </div>
+
+</div>

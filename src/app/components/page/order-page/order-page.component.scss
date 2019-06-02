@@ -3,6 +3,7 @@
   top: 0;
   left: 15px;
   max-width: 350px;
+  background-color: #f1eded;
 }
 
 .b-fixed-area{
@@ -11,5 +12,22 @@
 
   right: 0px;
   max-width: 350px;
+  background-color: #f1eded;
+}
 
+.my-container-fluid {
+  background-color: #f5f5f5;
+  min-height: 700px;
+}
+.my-order-list{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #CD853F;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px 2px #CD853F;
+  background-color: rgb(228, 199, 171);
+
+}
+label {
+  font-weight: 700;
 }
